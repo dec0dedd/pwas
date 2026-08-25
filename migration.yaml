@@ -1,0 +1,18 @@
+source_framework:
+  name: "Progressive Web App"
+  doc_urls:
+    - "https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps"
+    - "https://web.dev/explore/progressive-web-apps"
+
+target_framework:
+  name: "Android Architecture"
+  verification_command: "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64 ./gradlew assembleDebug lintDebug --no-daemon"
+  verification_timeout: 180
+  max_verification_rounds: 5
+  instructions:
+    - "Set compileOptions sourceCompatibility and targetCompatibility to JavaVersion.VERSION_17."
+    - "Set kotlinOptions jvmTarget to '17'."
+    - "Configure Java toolchain in build.gradle using java.toolchain.languageVersion = JavaLanguageVersion.of(17)."
+    - "Use Jetpack Compose for UI components."
+  doc_urls:
+    - "https://developer.android.com/jetpack/compose"
